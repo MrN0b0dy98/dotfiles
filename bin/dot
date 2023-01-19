@@ -2,42 +2,50 @@
 #
 # dot
 #
-# `dot` handles installation, updates, things like that. Run it periodically
-# to make sure you're on the latest and greatest.
+# `dot` is a dotfiles management tool for the command line. It handles installation, updates, and other tasks related to dotfiles.
+# Run it periodically to ensure that you are using the latest version of your dotfiles.
 
+# Exit the script if any command fails
 set -e
 
+# Get the directory path of the parent directory of the current script
 parentDirectory="$(cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd -P)"
+
+# Get the directory path of the dotfiles directory
 dotfilesDirectory="$(cd "$( dirname "$parentDirectory" )" && pwd -P)"
 
+# Function to display usage and exit
 displayUsageAndExit() {
-	echo "dot -- dotfiles management"
-	echo ""
-	echo "Usage: dot [options]"
-	echo ""
-	echo "Options:"
-	echo "  -e, --edit    Open dotfiles directory for editing"
-	echo "  -h, --help    Show this help message and exit"
-	exit
+    echo "dot -- dotfiles management"
+    echo ""
+    echo "Usage: dot [options]"
+    echo ""
+    echo "Options:"
+    echo "  -e, --edit    Open dotfiles directory for editing"
+    echo "  -h, --help    Show this help message and exit"
+    exit
 }
 
+# Process command line options
 while test $# -gt 0; do
-	case "$1" in
-		"-h"|"--help")
-			displayUsageAndExit
-			;;
-		"-e"|"--edit")
-			exec "$EDITOR" "$dotfilesDirectory"
-			exit
-			;;
-		*)
-			echo "Invalid option: $1"
-			displayUsageAndExit
-			;;
-	esac
-	shift
+    case "$1" in
+        "-h"|"--help")
+            displayUsageAndExit
+            ;;
+        "-e"|"--edit")
+            # Open the dotfiles directory for editing
+            exec "$EDITOR" "$dotfilesDirectory"
+            exit
+            ;;
+        *)
+            echo "Invalid option: $1"
+            displayUsageAndExit
+            ;;
+    esac
+    shift
 done
 
+# Set the ZSH variable to the dotfiles directory
 export ZSH=$HOME/.dotfiles
 
 # Set macOS defaults
