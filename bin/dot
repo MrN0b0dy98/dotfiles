@@ -65,7 +65,9 @@ brew update
 
 # Install Brew Bunlde and Software
 echo "› Install brew bundle and software"
-brew bundle $ZSH/homebrew/Brewfile
+cd $ZSH/homebrew/
+brew bundle
+cd $ZSH
 
 # Install software
 echo "› $ZSH/script/install"
