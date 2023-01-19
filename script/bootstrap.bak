@@ -1,74 +1,61 @@
 #!/usr/bin/env bash
-# This script is a bootstrap script that installs dotfiles on a system.
+#
+# bootstrap installs things.
 
-# Change the current working directory to the root of the dotfiles repository
 cd "$(dirname "$0")/.."
 DOTFILES_ROOT=$(pwd -P)
 
-# Exit the script if any command fails
 set -e
 
-# Print a new line for readability
 echo ''
 
-# Function to print informational messages prefixed with ".."
 info () {
   printf "\r  [ \033[00;34m..\033[0m ] $1\n"
 }
 
-# Function to print messages requiring user input prefixed with "??"
 user () {
   printf "\r  [ \033[0;33m??\033[0m ] $1\n"
 }
 
-# Function to print success messages prefixed with "OK"
 success () {
   printf "\r\033[2K  [ \033[00;32mOK\033[0m ] $1\n"
 }
 
-# Function to print failure messages prefixed with "FAIL"
 fail () {
   printf "\r\033[2K  [\033[0;31mFAIL\033[0m] $1\n"
   echo ''
   exit
 }
 
-# Function to setup gitconfig file
 setup_gitconfig () {
-  # Check if gitconfig.local.symlink file already exists
   if ! [ -f git/gitconfig.local.symlink ]
   then
     info 'setup gitconfig'
 
-    # Set git_credential variable to 'cache' or 'osxkeychain' depending on the OS
     git_credential='cache'
     if [ "$(uname -s)" == "Darwin" ]
     then
       git_credential='osxkeychain'
     fi
 
-    # Prompt user for Github author name
-    user ' - What is your Github author name?'
+    user ' - What is your github author name?'
     read -e git_authorname
-    # Prompt user for Github author email
-    user ' - What is your Github author email?'
+    user ' - What is your github author email?'
     read -e git_authoremail
 
-    # Create gitconfig.local.symlink file by replacing placeholders in gitconfig.local.symlink.example
     sed -e "s/AUTHORNAME/$git_authorname/g" -e "s/AUTHOREMAIL/$git_authoremail/g" -e "s/GIT_CREDENTIAL_HELPER/$git_credential/g" git/gitconfig.local.symlink.example > git/gitconfig.local.symlink
 
     success 'gitconfig'
   fi
 }
 
-# Function to create symlinks for files in the dotfiles repository
+
 link_file () {
   local src=$1 dst=$2
 
   local overwrite= backup= skip=
   local action=
 
-  # Check if the destination file or directory or symlink already exists
   if [ -f "$dst" -o -d "$dst" -o -L "$dst" ]
   then
 
@@ -77,11 +64,9 @@ link_file () {
 
       local currentSrc="$(readlink $dst)"
 
-      # Check if the current symlink source is the same as the new symlink source
       if [ "$currentSrc" == "$src" ]
       then
 
-        # Set skip to true if the symlink source is the same
         skip=true;
 
       else
@@ -111,33 +96,28 @@ link_file () {
 
     fi
 
-    # Set overwrite, backup and skip to overwrite_all, backup_all and skip_all if they are not set
     overwrite=${overwrite:-$overwrite_all}
     backup=${backup:-$backup_all}
     skip=${skip:-$skip_all}
 
-    # Remove destination file if overwrite is set to true
     if [ "$overwrite" == "true" ]
     then
       rm -rf "$dst"
       success "removed $dst"
     fi
 
-    # Backup destination file if backup is set to true
     if [ "$backup" == "true" ]
     then
       mv "$dst" "${dst}.backup"
       success "moved $dst to ${dst}.backup"
     fi
 
-    # Skip linking the file if skip is set to true
     if [ "$skip" == "true" ]
     then
       success "skipped $src"
     fi
   fi
 
-  # Create symlink if skip is not set to true
   if [ "$skip" != "true" ]  # "false" or empty
   then
     ln -s "$1" "$2"
@@ -145,46 +125,32 @@ link_file () {
   fi
 }
 
-# Function to install dotfiles
 install_dotfiles () {
-  # Print message to indicate start of dotfiles installation
   info 'installing dotfiles'
 
-  # Set default values for flags to control file overwrite, backup and skip behavior
   local overwrite_all=false backup_all=false skip_all=false
 
-  # Loop through all files ending in .symlink in the dotfiles repository
   for src in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -name '*.symlink' -not -path '*.git*')
   do
-    # Construct destination path for symlink
     dst="$HOME/.$(basename "${src%.*}")"
-    # Create symlink for file
     link_file "$src" "$dst"
   done
 }
 
-# Call function to setup gitconfig
 setup_gitconfig
-# Call function to install dotfiles
 install_dotfiles
 
-# If on a Mac, install and setup homebrew
+# If we're on a Mac, let's install and setup homebrew.
 if [ "$(uname -s)" == "Darwin" ]
 then
-  # Print message to indicate start of dependency installation
   info "installing dependencies"
-  # Run the dot command from bin/dot and print output with info function
   if source bin/dot | while read -r data; do info "$data"; done
   then
-    # Print success message if dependencies are installed successfully
     success "dependencies installed"
   else
-    # Print error message if there is an error installing dependencies
     fail "error installing dependencies"
   fi
 fi
 
-# Print a new line for readability
 echo ''
-# Print message indicating successful installation
 echo '  All installed!'
