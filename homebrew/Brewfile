@@ -18,46 +18,46 @@ brew "terraform"
 brew "zsh-autosuggestions"
 brew "azure/functions/azure-functions-core-tools@4"
 
-# Casks
-cask "1password"
-cask "1password-cli"
-cask "alfred"
-cask "alt-tab"
-cask "azure-data-studio"
-cask "brave-browser"
-cask "discord"
-cask "docker"
-cask "font-caskaydia-cove-nerd-font"
-cask "font-fira-code-nerd-font"
-cask "font-hack-nerd-font"
-cask "git-credential-manager-core"
-cask "github"
-cask "iterm2"
-cask "jetbrains-toolbox"
-cask "microsoft-azure-storage-explorer"
-cask "microsoft-edge"
-cask "onedrive"
-cask "parallels"
-cask "postman"
-cask "powershell"
-cask "pycharm-ce"
-cask "raycast"
-cask "steam"
-cask "swiftcord"
+# #Casks
+#cask "1password"
+#cask "1password-cli"
+#cask "alfred"
+#cask "alt-tab"
+#cask "azure-data-studio"
+#cask "brave-browser"
+#cask "discord"
+#cask "docker"
+#cask "font-caskaydia-cove-nerd-font"
+#cask "font-fira-code-nerd-font"
+#cask "font-hack-nerd-font"
+#cask "git-credential-manager-core"
+#cask "github"
+#cask "iterm2"
+#cask "jetbrains-toolbox"
+#cask "microsoft-azure-storage-explorer"
+#cask "microsoft-edge"
+#cask "onedrive"
+#cask "parallels"
+#cask "postman"
+#cask "powershell"
+#cask "pycharm-ce"
+#cask "raycast"
+#cask "steam"
+#cask "swiftcord"
 cask "visual-studio-code"
-cask "warp"
-cask "webcatalog"
+#cask "warp"
+#cask "webcatalog"
 
 # Mac App Store Applications
-mas "1Password for Safari", id: 1569813296
-mas "Flow", id: 1423210932
-mas "Magnet", id: 441258766
-mas "Microsoft Remote Desktop", id: 1295203466
-mas "Remote Desktop", id: 409907375
-mas "Save to Raindrop.io", id: 1549370672
-mas "Save to Reader", id: 1640236961
-mas "Slack", id: 803453959
-mas "WhatsApp", id: 1147396723
-mas "Workspace", id: 1462282993
-mas "Xcode", id: 497799835
-mas "Yubico Authenticator", id: 1497506650
+#mas "1Password for Safari", id: 1569813296
+#mas "Flow", id: 1423210932
+#mas "Magnet", id: 441258766
+#mas "Microsoft Remote Desktop", id: 1295203466
+#mas "Remote Desktop", id: 409907375
+#mas "Save to Raindrop.io", id: 1549370672
+#mas "Save to Reader", id: 1640236961
+#mas "Slack", id: 803453959
+#mas "WhatsApp", id: 1147396723
+#mas "Workspace", id: 1462282993
+#mas "Xcode", id: 497799835
+#mas "Yubico Authenticator", id: 1497506650
