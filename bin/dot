@@ -58,6 +58,10 @@ $ZSH/homebrew/install.sh 2>&1
 echo "› brew update"
 brew update
 
+# Install Brew Bunlde and Software
+echo "› Install brew bundle and software"
+brew bundle
+
 # Install software
 echo "› $ZSH/script/install"
 $ZSH/script/install
