@@ -22,3 +22,9 @@ alias gb='git branch'
 alias gs='git status -sb' # upgrade your git if -sb breaks for you. it's fun.
 alias gac='git add -A && git commit -m'
 alias ge='git-edit-new'
+
+alias glsa = 'git log --graph --decorate --format=\"%C(yellow)%h %Cblue%ad %Cgreen%<(8,trunc)%aN%C(auto)%d %Creset%<(80,trunc)%s\" --date=short --all -n 10'
+alias gls = 'git log --graph --decorate --format=\"%C(yellow)%h %Cblue%ad %Cgreen%<(8,trunc)%aN%C(auto)%d %Creset%<(80,trunc)%s\" --date=short -n 10'
+alias glola = 'git log --graph --decorate --format=\"%C(yellow)%h %Cblue%ad %Cgreen%<(8,trunc)%aN%C(auto)%d %Creset%<(80,trunc)%s\" --date=short --all'
+alias glol = 'git log --graph --decorate --format=\"%C(yellow)%h %Cblue%ad %Cgreen%<(8,trunc)%aN%C(auto)%d %Creset%<(80,trunc)%s\" --date=short'
+alias glgg = 'git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit --date=relative'
