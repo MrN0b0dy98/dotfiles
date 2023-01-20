@@ -163,6 +163,17 @@ install_dotfiles () {
   done
 }
 
+# If on a Mac, setup Touch ID for sudo
+if [ "$(uname -s)" == "Darwin" ]
+then
+  # Print message to indicate start of setup
+  info "Setting up Terminal Touch ID support"
+  # Make the enable_touch_id.sh script executable. This allows us to run the script and enable Touch ID on the system
+  chmod +x $ZSH/macos/enable_touch_id.sh
+  # Run the enable_touch_id.sh script using sudo. This will enable Touch ID for terminal use
+  sudo $ZSH/macos/enable_touch_id.sh
+fi
+
 # Call function to setup gitconfig
 setup_gitconfig
 # Call function to install dotfiles
