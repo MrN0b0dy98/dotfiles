@@ -6,5 +6,11 @@ set -e
 
 cd "$(dirname $0)"/..
 
+# Install Brew Bunlde and Software
+echo "› Install brew bundle and software"
+cd $ZSH/homebrew/
+brew bundle
+cd $ZSH
+
 # find the installers and run them iteratively
 find . -name install.sh | while read installer ; do sh -c "${installer}" ; done
