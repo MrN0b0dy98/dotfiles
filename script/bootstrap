@@ -198,4 +198,10 @@ fi
 # Print a new line for readability
 echo ''
 # Print message indicating successful installation
-echo '  All installed!'
+echo '  All installed! Now sleeping for 10s, restart afterwards!'
+
+# Wait for 10s
+sleep 10
+
+# Restart Mac
+sudo shutdown -r now
