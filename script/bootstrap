@@ -201,7 +201,7 @@ echo ''
 echo '  All installed! Now sleeping for 10s, restart afterwards!'
 
 # Wait for 10s
-sleep 15
+#sleep 15
 
 # Restart Mac
-sudo shutdown -r now
+#sudo shutdown -r now
