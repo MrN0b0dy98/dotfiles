@@ -10,5 +10,9 @@ cd "$(dirname $0)"/..
 echo "› Install brew bundle and software"
 brew bundle --file=$ZSH/homebrew/Brewfile
 
+#Download and Install pCloud
+curl "https://p-lux4.pcloud.com/cBZg4HNJKZciDawGZZZcOHvc7Z2ZZjiRZkZc8JG7ZT5ZYRZLLZoHZTJZSLZiXZiRZvpZaVZ8XZGzZFZv5ZsqhnVZ0hRlpUu8JcLsGx37VYID3jNMTsJ7/pCloud%20Drive%20*%20macFUSE.pkg" --output "$HOME/Downloads/pCloudDrive.pkg"
+sudo installer -verbose -pkg "$HOME/Downloads/pCloudDrive.pkg" -target /
+
 # find the installers and run them iteratively
 find . -name install.sh | while read installer ; do sh -c "${installer}" ; done
