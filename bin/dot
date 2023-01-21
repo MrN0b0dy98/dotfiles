@@ -54,6 +54,9 @@ $ZSH/macos/set-defaults.sh
 # Install homebrew
 $ZSH/homebrew/install.sh 2>&1
 
+# Set PATH, MANPATH, etc., for Homebrew, in current shell
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # Upgrade homebrew
 echo "› brew update"
 brew update
