@@ -171,7 +171,7 @@ then
   # Make the enable_touch_id.sh script executable. This allows us to run the script and enable Touch ID on the system
   #chmod +x $ZSH/macos/enable_touch_id.sh
   # Run the enable_touch_id.sh script using sudo. This will enable Touch ID for terminal use
-  sudo $ZSH/macos/enable_touch_id.sh
+  sudo macos/enable_touch_id.sh
 fi
 
 # Call function to setup gitconfig
