@@ -14,5 +14,18 @@ brew bundle --file=$ZSH/homebrew/Brewfile
 curl "https://p-lux4.pcloud.com/cBZg4HNJKZciDawGZZZcOHvc7Z2ZZjiRZkZc8JG7ZT5ZYRZLLZoHZTJZSLZiXZiRZvpZaVZ8XZGzZFZv5ZsqhnVZ0hRlpUu8JcLsGx37VYID3jNMTsJ7/pCloud%20Drive%20*%20macFUSE.pkg" --output "$HOME/Downloads/pCloudDrive.pkg"
 sudo installer -verbose -pkg "$HOME/Downloads/pCloudDrive.pkg" -target /
 
+curl "https://cdn-2.webcatalog.io/switchbar/Switchbar-*-universal.dmg" --output "$HOME/Downloads/Switchbar.dmg"
+sudo hdiutil attach "$HOME/Downloads/Switchbar.dmg"
+sudo cp -R /Volumes/Switchbar*/Switchbar.app /Applications
+cd ~
+hdiutil unmount /Volumes/Switchbar*/
+
+curl "https://files.teamspeak-services.com/pre_releases/client/5.0.0-beta70/teamspeak-client.dmg" --output "$HOME/Downloads/TS5.dmg"
+sudo hdiutil attach "$HOME/Downloads/TS5.dmg"
+sudo cp -R /Volumes/TeamSpeak/Switchbar.app /Applications
+cd ~
+hdiutil unmount /Volumes/TeamSpeak/
+
+
 # find the installers and run them iteratively
 find . -name install.sh | while read installer ; do sh -c "${installer}" ; done
