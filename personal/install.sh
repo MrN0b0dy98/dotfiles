@@ -34,10 +34,3 @@ mkdir $HOME/Developer
 
 # Force restart LaunchPad (resets icon order)
 defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock
-
-# Setup pCloud Sync for "~/Developer" folder -> Not working :/
-#defaults write com.pcloud.pcloud.macos NSNavLastRootDirectory -string "~/Developer"
-#defaults write com.pcloud.pcloud.macos NSNavPanelExpandedSizeForOpenMode -string "{800, 448}"
-#defaults write com.pcloud.pcloud.macos "NSWindow Frame NSNavPanelAutosaveName" -string "171 293 800 448 0 0 1440 875 "
-#defaults write com.pcloud.pcloud.macos OfflineAccessFolder_0 -string "/Developer"
-#defaults write com.pcloud.pcloud.macos SyncFolder_0 -string "$HOME/Developer"
