@@ -6,7 +6,7 @@ set -e
 
 cd "$(dirname $0)"/..
 
-# Install Brew Bunlde and Software
+# Install Brew Bundle and Software
 echo "› Install brew bundle and software"
 brew bundle --file=$ZSH/homebrew/Brewfile
 
