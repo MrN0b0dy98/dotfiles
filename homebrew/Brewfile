@@ -91,3 +91,5 @@ mas "WhatsApp", id: 1147396723
 mas "Workspace", id: 1462282993
 mas "Xcode", id: 497799835
 mas "Yubico Authenticator", id: 1497506650
+#brew "aztfy"
+#mas "Slack", id: 803453959
