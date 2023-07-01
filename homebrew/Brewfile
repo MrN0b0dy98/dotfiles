@@ -1,59 +1,92 @@
-tap "azure/functions"
+#tap "azure/functions"
+#tap "cloudflare/cloudflare"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/core"
+tap "macos-fuse-t/cask"
 tap "microsoft/git"
-#brew "aztfy"
-brew "azure-cli"
-brew "kubernetes-cli"
+brew "python@3.10"
+#brew "azure-cli"
+#brew "kubernetes-cli"
 brew "mas"
 brew "node"
 brew "nodenv"
+brew "ocrmypdf"
+brew "pipx"
 brew "starship"
-brew "terraform"
+#brew "syncthing"
+#brew "terraform"
+brew "tesseract-lang"
 brew "zsh-autosuggestions"
-brew "azure/functions/azure-functions-core-tools@4"
+#brew "azure/functions/azure-functions-core-tools@4"
 cask "1password"
 cask "1password-cli"
 cask "airbuddy"
-cask "alfred"
+#cask "alfred"
 cask "alt-tab"
-cask "azure-data-studio"
+#cask "android-platform-tools"
+cask "arc"
+#cask "azure-data-studio"
+cask "balenaetcher"
 cask "brave-browser"
+cask "chromium"
+cask "cryptomator"
 cask "discord"
-cask "docker"
+#cask "docker"
+cask "dupeguru"
+cask "firefox"
 cask "font-caskaydia-cove-nerd-font"
 cask "font-fira-code-nerd-font"
 cask "font-hack-nerd-font"
-cask "git-credential-manager-core"
+cask "fuse-t"
+cask "fuse-t-sshfs"
+#cask "git-credential-manager-core"
 cask "github"
 cask "iterm2"
-cask "jetbrains-toolbox"
-cask "microsoft-azure-storage-explorer"
+#cask "jetbrains-toolbox"
+#cask "logseq"
+#cask "microsoft-azure-storage-explorer"
 cask "microsoft-edge"
-cask "onedrive"
-cask "parallels"
-cask "postman"
+cask "multiviewer-for-f1"
+cask "notion"
+cask "obsidian"
+#cask "onedrive"
+#cask "parallels"
+#cask "postman"
 cask "powershell"
-cask "pycharm-ce"
+#cask "pycharm-ce"
 cask "raycast"
-cask "remote-desktop-manager-free"
-cask "steam"
-cask "swiftcord"
+cask "remote-desktop-manager"
+cask "resilio-sync"
+#cask "steam"
+#cask "sweet-home3d"
+#cask "swiftcord"
+cask "tabula"
+cask "tagspaces"
+#cask "teamviewer"
 cask "visual-studio-code"
 cask "warp"
-cask "webcatalog"
-mas "1Password for Safari", id: 1569813296
-mas "Flow", id: 1423210932
+mas "Fantastical", id: 975937182
+#cask "webcatalog"
+#mas "1Password for Safari", id: 1569813296
+#mas "Flow", id: 1423210932
+#mas "HP Smart", id: 1474276998
+#mas "Instapaper", id: 288545208
+#mas "Instapaper Save", id: 1481302432
 mas "Magnet", id: 441258766
 mas "Microsoft Excel", id: 462058435
 mas "Microsoft Remote Desktop", id: 1295203466
-mas "Microsoft Word", id: 462054704
+#mas "Microsoft Word", id: 462054704
+mas "Numbers", id: 409203825
+#mas "Outbank", id: 1094255754
+mas "Pages", id: 409201541
+mas "PDF Search", id: 1229271394
 mas "Remote Desktop", id: 409907375
+#mas "Save to Pocket", id: 1477385213
 mas "Save to Raindrop.io", id: 1549370672
 mas "Save to Reader", id: 1640236961
-#mas "Slack", id: 803453959
+mas "TestFlight", id: 899247664
 mas "WhatsApp", id: 1147396723
 mas "Workspace", id: 1462282993
 mas "Xcode", id: 497799835
