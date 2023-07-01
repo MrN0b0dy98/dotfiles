@@ -56,3 +56,6 @@ bindkey "^[[B" down-line-or-beginning-search # Down
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && . "$HOME/.fig/shell/zshrc.post.zsh"
+
+# Created by `pipx` on 2023-05-23 08:14:26
+export PATH="$PATH:$HOME/.local/bin"
